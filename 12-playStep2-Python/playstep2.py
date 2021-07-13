@@ -35,9 +35,46 @@
 
 def playstep2(hand, dice):
 	# your code goes here
-	value1 = hand//100
-	value2 = (hand % 100)//10
-	value3 = (hand % 100)%10
-	if(value1 == value2) or (value1 == value3) or (value2 == value3):
+	a,b,c = handtodice(hand)
+
+	list = []
+	if a != b!= c:
+		list.append(max(a,b,c))
+		x = dice % 10
+		list.append(x)
+		dice=dice//10
+		y=dice%10
+		dice = dice//10
+		list.append(y)
 		
-	pass
+		list.sort(reverse=True)
+		num = list[0]*100 + list[1]*10 + list[2]
+		return (num, dice)
+	else:
+		if a==b or a==c or b==c :
+			last = dice %10
+			if a == b :
+				c = last
+			elif b == c :
+				a = last
+			else:
+				b = last
+		thand = [a,b,c]
+		thand.sort(reverse = True)	
+		num = thand[0]*100 + thand[1]*10 + thand[2]
+		dice = dice//10
+		return (num, dice)
+
+
+def handtodice(hand):
+	
+	i = hand
+	li = []
+	
+	while (i > 0):
+		value = i % 10
+		i = i // 10
+		
+		li.append(value)
+		
+	return tuple(li[::-1])
