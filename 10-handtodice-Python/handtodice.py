@@ -7,4 +7,10 @@
 
 def handtodice(hand):
 	# your code goes here
-	pass
+	i = hand
+	value1 = i//100
+	value2 = (i % 100)//10
+	value3 = (i %100)%10
+	
+	return(value1,value2,value3)
+
