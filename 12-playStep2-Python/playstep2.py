@@ -35,4 +35,9 @@
 
 def playstep2(hand, dice):
 	# your code goes here
+	value1 = hand//100
+	value2 = (hand % 100)//10
+	value3 = (hand % 100)%10
+	if(value1 == value2) or (value1 == value3) or (value2 == value3):
+		
 	pass
