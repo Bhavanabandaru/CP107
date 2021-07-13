@@ -12,4 +12,9 @@
 
 def dicetoorderedhand(a, b, c):
 	# your code goes here
-	pass
+	value1 = max(a,b,c) # it is to find the max value of the 3 nums 
+	value3 = min(a,b,c) # it is to find the min value of the 3 nums 
+	value2 = a+b+c-value1-value3 # it is to find the middle value of the 3 nums 
+	value = value1*100 + value2*10 +value3 # it is to find the whole value in the form of whole num in an ordered form
+	
+	return value
