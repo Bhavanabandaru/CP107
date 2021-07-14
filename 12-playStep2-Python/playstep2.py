@@ -69,12 +69,8 @@ def playstep2(hand, dice):
 def handtodice(hand):
 	
 	i = hand
-	li = []
+	value1 = i//100
+	value2 = (i % 100)//10
+	value3 = (i %100)%10
 	
-	while (i > 0):
-		value = i % 10
-		i = i // 10
-		
-		li.append(value)
-		
-	return tuple(li[::-1])
+	return(value1,value2,value3)
