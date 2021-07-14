@@ -7,12 +7,12 @@
 
 def fun_isfactor(f, n):
 	if(f<0):
-		f = abs(f)
+		f = -f
 	if(f == 0 and n == 0):
 		return True
 	elif(f == 0):
 		return False
-	elif(f % n==0):
+	elif(n % f==0):
 		return True
 	else:
 		return False # replace with your solution
