@@ -7,4 +7,10 @@
 
 def isrighttriangle(x1, y1, x2, y2, x3, y3):
 	# your code goes here
-	pass
+	x = pow((x2-x1),2)+pow((y2-y1),2)
+	y = pow((x3-x2),2)+pow((y3-y2),2)
+	z = pow((x3-x1),2)+pow((y3-y1),2)
+	if (x > 0 and y > 0 and z > 0) and (x == (y + z) or y == (x + z) or z == (y + x)):
+		return True
+	else: 
+		return False
