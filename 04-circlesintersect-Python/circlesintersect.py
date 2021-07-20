@@ -6,4 +6,12 @@
 
 def fun_circlesintersect(x1, y1, r1, x2, y2, r2):
 	# your code goes here
-	return False 
+	distance = (((x1 - x2)**2) + ((y1-y2)**2))
+	radiussum = (r1 + r2)**2
+
+	if(distance == radiussum):
+		return True
+	elif(distance > radiussum):
+		return False
+	else:
+		return False 
