@@ -11,7 +11,7 @@ def digit(m,n):
             co += 1
         n = n // 10
     return co
-def mostFrequentDigit(n):
+def mostfrequentdigit(n):
 	# your code goes here
     x = -1
     f = -1
