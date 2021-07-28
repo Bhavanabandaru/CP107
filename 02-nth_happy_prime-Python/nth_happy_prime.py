@@ -9,7 +9,7 @@ def fun_nth_happy_prime(n):
 	count = -1
 	i = 2
 	while True:
-		if is_prime(n) and is_happy(n):
+		if is_prime(i) and is_happy(i):
 			count += 1
 		if count == n:
 			break
@@ -24,7 +24,7 @@ def is_happy(n):
 		if n == 4:
 			return False
 		else:
-			sqod = sum_sqof_digits(n)
+			n = sum_sqof_digits(n)
 
 	return False
 
@@ -43,4 +43,4 @@ def is_prime(n):
 			return False
 	return True
 
-print(fun_nth_happy_prime(0))	
+	
