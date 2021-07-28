@@ -16,7 +16,23 @@
 # assert(ishappynumber(98) == False)
 # assert(ishappynumber(404) == True)
 # assert(ishappynumber(405) == False)
-
+def sum_sqof_digits(n):
+	sum = 0
+	while n > 0:
+		sum += (n % 10)**2
+		n = n // 10
+	return sum
 def ishappynumber(n):
 	# your code goes here
-	pass
+	if n<0:
+		return False
+	while(1):
+		if n == 1:
+			return True
+		if n == 4:
+			return False
+		else:
+			n = sum_sqof_digits(n)
+
+	return False
+print(ishappynumber(2))
