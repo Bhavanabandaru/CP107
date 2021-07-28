@@ -16,3 +16,35 @@
 # assert (isAdditivePrime(97) == False)
 # print("All test cases passed... :-)")
 # Note: checkout from the master branch from your visual studio code by trying to search for the problem statement (Search for it). Once you find out, start solving it.
+def isPrime(n):
+    n = int(n)
+    if n < 2:
+        return False
+    for i in range(2, n):
+        if n % i == 0:
+            return False
+    return True
+# Function to get sum of digits
+def Sum_of_Digits(n):
+ 
+    sum = 0
+    while (n != 0):
+        sum = sum + n % 10
+        n = n / 10
+    return sum
+ 
+
+def isAdditivePrime(n):
+ 
+    if (not isPrime(n)):
+        return False
+ 
+    return isPrime(Sum_of_Digits(n))
+ 
+N = 23
+ 
+
+if (isAdditivePrime(N)):
+    print ("True")
+else:
+    print ("False")
