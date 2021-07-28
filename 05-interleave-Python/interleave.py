@@ -8,5 +8,19 @@
 
 
 def fun_interleave(s1,s2):
-	return ""
+	a=0
+	b=0
+	x=""
+	if len(s1)>len(s2):
+		b=len(s2)
+	else:
+		b=len(s1)
+	while(a<b):
+		x=x+s1[a]+s2[a]
+		a+=1
+	if b==len(s1):
+		x=x+s2[b:]
+	else:
+		x=x+s1[b:]
+	return x
 	
