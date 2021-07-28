@@ -15,4 +15,22 @@
 
 def ismostlymagicsquare(a):
 	# Your code goes here
-	pass
+	n=len(a)
+	diagsum1 = 0
+	diagsum2 = 0
+
+	for i in range(n):
+		diagsum1+=a[i][i]
+		diagsum2 += a[i][n-i-1]
+
+	if not(diagsum1==diagsum2):
+		return False
+	for i in range(n):
+		rowsum = 0
+		colsum = 0
+		for j in range(n):
+			rowsum += a[i][j]
+			colsum += a[j][i]
+		if not(rowsum==colsum==diagsum1):
+			return False
+	return True
