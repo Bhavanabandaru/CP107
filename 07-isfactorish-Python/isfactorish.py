@@ -33,10 +33,8 @@ def fun_isfactorish(n):
 
 	if(d1 == 0 or d2 == 0 or d3 == 0):
 		return False
-
 	elif(d1 == d2 or d2 == d3 or d3 == d1):
 		return False
-
 	elif (t%d1 == 0 and t%d2 == 0 and t%d3 == 0):
 		return True
 
