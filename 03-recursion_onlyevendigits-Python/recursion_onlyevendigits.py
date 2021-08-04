@@ -8,5 +8,32 @@
 # Also the function returns the empty list if the original list is empty. 
 # Remember to not use strings. You may not use loops/iteration in this problem.
 
-def fun_recursion_onlyevendigits(l): 
+def convertEven(n, s = 0):
+	n = abs(n)
+	if n == 0:
+		return s
+	else:
+		if (n%10)%2 == 0:
+			return convertEven(n//10, s = s*10+n%10)
+		else:
+			return convertEven(n//10, s)
+def prepareList(N, i):
+	if N == []:
 		return []
+	if len(N) == i:
+		return N
+	else:
+		ele = N[i]
+		N[i] = reverseNum(convertEven(ele))
+		return prepareList(N, i+1)
+def reverseNum(n, s = 0):
+	if n == 0:
+		return s
+	else:
+		return reverseNum(n//10, s = s*10+n%10)
+def fun_recursion_onlyevendigits(l): 
+	if len(l) == 0:
+		return l
+	return prepareList(l, 0)
+
+		
