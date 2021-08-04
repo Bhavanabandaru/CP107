@@ -11,7 +11,6 @@
 
 def fun_getaverage(s): 
 	li=list(s.split(","))
-	
 	sum=0
 	cnt=0
 	for i in li:
