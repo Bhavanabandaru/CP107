@@ -10,7 +10,35 @@
 #  assert(fun_isfactorish(420) == False) # 420 has a 0 (0 is not a factor)
 #  assert(fun_isfactorish(42) == False) # 42 has a leading 0 (only 2 unique digits)
 
+def noofDigits(n):
+	c = 0
+	while(n > 0):
+		n = n // 10
+		c += 1
+	return c
 
 def fun_isfactorish(n):
-	return False
+	t = abs(n) 
+	if (n < 0):
+		n = -n
+
+	if(noofDigits(t) != 3 ):
+		return False
+
+	d1 = n % 10
+	n = n // 10
+	d2 = n % 10
+	n = n // 10
+	d3 = n % 10
+
+	if(d1 == 0 or d2 == 0 or d3 == 0):
+		return False
+
+	elif(d1 == d2 or d2 == d3 or d3 == d1):
+		return False
+
+	elif (t%d1 == 0 and t%d2 == 0 and t%d3 == 0):
+		return True
+
+	return False 
 
