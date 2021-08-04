@@ -5,4 +5,5 @@
 
 def nthpronicnumber(n):
 	# Your code goes here
-	pass
+	num = n*(n+1)
+	return num
