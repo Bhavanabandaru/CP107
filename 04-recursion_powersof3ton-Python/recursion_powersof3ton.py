@@ -12,10 +12,8 @@ def recursion_powersof3ton(n,nextPower=0, newL = None):
 	if n < 1:
 		return None
 	else:
-		#every time we move on our power increments by 1
 		nextPower += 1
 		nextNumber = 3**nextPower
-		#if next number is greater than our number then we stop looping
 		if(nextNumber > n):
 			return newL
 		newL.append(nextNumber)
