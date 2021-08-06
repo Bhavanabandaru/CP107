@@ -16,7 +16,16 @@
 
 def cw(s):
     # Your code goes here...
-    return ""
+    i=0
+    j=0
+    x=''
+    while i<len(s):
+        if not s[i].isspace():
+            x+=s[i]
+        elif x[-1]!=" ":
+            x=x+" "
+        i+=1
+    return x
 
 assert(cw("a\nb") == "a b")
 assert(cw("a\n   \t    b") == "a b")
