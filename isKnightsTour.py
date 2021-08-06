@@ -31,7 +31,32 @@
 
 def isKnightsTour(board):
     # Your code goes here...
-    pass
+    d1=len(board)
+    d2=len(board[0])
+    for a in range(d1*d2):
+        for i in range(len(board)):
+            for j in range(len(board[0])):
+                if a==board[i][j]:
+                    if  not (
+                        (board[abs((i+2))%d1][abs((j+1))%d2]==board[i][j]+1) or 
+                    
+                        (board[abs((i+2))%d1][abs((j-1))%d2]==board[i][j]+1) or
+                    
+                        (board[abs((i-2))%d1][abs((j+1))%d2]==board[i][j]+1) or
+                    
+                        (board[abs((i-2))%d1][abs((j-1))%d2]==board[i][j]+1) or
+
+                        (board[abs((i+1))%d1][abs((j+2))%d2]==board[i][j]+1) or
+
+                        (board[abs((i+1))%d1][abs((j-2))%d2]==board[i][j]+1) or
+
+                        (board[abs((i-1))%d1][abs((j+2))%d2]==board[i][j]+1) or
+
+                        (board[abs((i-1))%d1][abs((j-2))%d2]==board[i][j]+1)):
+                        return False
+    
+    return True
+
 
 board = [
             [  1, 60, 39, 34, 31, 18,  9, 64 ],
