@@ -24,6 +24,31 @@ Thus, in this example, friendsOfFriends should return:
 }
 '''
 
+def readDict():
+    a = {}
+    n = int(input())
+    for i in range(n):
+        s = input().split()
+        a[s[0]] = set(s[1:])
+    return a
+
+def mutualfriend(d,i):
+    m=[]
+    for j in d[i]:
+        if j in d:
+            for k in d[j]:
+                if k not in m and  k not in d[i] and k not in i:
+                        m.append(k)
+                
+    return m
 def friendsOfFriends(d):
-    # Your code goes here...
-    return None
+    # your code goes here
+    a={}
+    for i in d:
+        if i not in a:
+            a[i]=mutualfriend(d,i)
+    return a
+d = friendsOfFriends(readDict())
+
+for i in sorted(d.keys()):
+    print(i, sorted(d[i]))
