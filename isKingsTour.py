@@ -18,6 +18,52 @@
 # returns True if it represents a legal Kings Tour 
 # and False otherwise.
 
+def legal(board,row,col):
+    rows = len(board)
+    cols = len(board[0])
+    k = board[row][col]
+    if col+1<cols:
+        c=col+1
+        if board[row][c]==k+1:
+            return True
+    if col-1>=0:
+        c=col-1
+        if board[row][c]==k+1:
+            return True
+    if row-1>=0:
+        r=row-1
+        if board[r][col]==k+1:
+            return True
+        if col-1>=0:
+            c=col-1
+            if board[r][c]==k+1:
+                return True
+        if col+1<cols:
+            c=col+1
+            if board[r][c]==k+1:
+                return True
+    if row+1<rows:
+        r = row+1
+        if board[r][col]==k+1:
+            return True
+        if col-1>=0:
+            c = col-1
+            if board[r][c]==k+1:
+                return True
+        if col+1<cols:
+            c = col+1
+            if board[r][c]==k+1:
+                return True
+    return False
+
 def isKingsTour(board):
     # Your code goes here...
-    pass
+    for x in range(len(board)):
+        for y in range(len(board[0])):
+            if board[x][y] != (len(board)*(len(board[0]))):
+                if not legal(board,x,y):
+                    return False
+    
+    return True
+
+
