@@ -7,4 +7,18 @@
 
 def samechars(s1, s2):
 	# Your code goes here
-	pass
+	i=0
+	j=0
+	x=0
+	while(j<len(s2)):
+		i=0
+		while(i<len(s1)):
+			if s1[i]==s2[j]:
+				x+=1
+				break
+			i+=1
+		j+=1
+	if x==len(s2):
+		return True
+	else:
+		return False
