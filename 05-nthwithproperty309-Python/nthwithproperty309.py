@@ -4,6 +4,24 @@
 # Write the function nthWithProperty309 that takes a non-negative int n and returns 
 # the nth number with Property309.
 
+def withproperty(n):
+	a= n*n*n*n*n
+	b=str(a)
+	c='0123456789'
+	for i in c:
+		if i in b:
+			continue
+		else:
+			return False
+
+	return True
+
 def nthwithproperty309(n):
 	# Your code goes here
-	pass
+	a = -1
+	b = 0
+	while a < n:
+		b = b+1
+		if withproperty(b):
+			a = a+1
+	return b
